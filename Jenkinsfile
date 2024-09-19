@@ -25,7 +25,7 @@ pipeline {
         stage('change permissions') {
             steps {
                 sh '''
-                      sudo chown ubuntu /var/www/html/index.html
+                      sudo chown jenkins /var/www/html/index.html
                    '''
             }
         }

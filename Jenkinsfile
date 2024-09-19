@@ -22,10 +22,17 @@ pipeline {
                    '''
             }
         }
-        stage('create file') {
+        stage('change permissions') {
             steps {
                 sh '''
-                      touch /home/ubuntu/hello.txt
+                      sudo chown ubuntu /var/www/html/index.html
+                   '''
+            }
+        }
+            stage('write to file') {
+            steps {
+                sh '''
+                      echo "<h1> Hello from server </h1>" > /var/www/html/index.html
                    '''
             }
     }

@@ -22,5 +22,11 @@ pipeline {
                    '''
             }
         }
+        stage('create file') {
+            steps {
+                sh '''
+                      touch /home/ubuntu/hello.txt
+                   '''
+            }
     }
 }

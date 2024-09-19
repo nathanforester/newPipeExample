@@ -35,6 +35,12 @@ pipeline {
                       echo "<h1> Hello from server </h1>" > /var/www/html/index.html
                    '''
             }
+            stage('change permissions back to root') {
+            steps {
+                sh '''
+                      sudo chown root /var/www/html/index.html
+                   '''
+            }
     }
 }
 }
